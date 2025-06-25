@@ -1,0 +1,651 @@
+<!-- Versi Sidebar Dashboard CMMS - Diatur Mengikut Jabatan Berdasarkan Table of Contents -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMMS Maintenance Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f4f6f9; display: flex; }
+    .sidebar {
+      width: 300px;
+      background-color: #343a40;
+      color: white;
+      height: 100vh;
+      padding: 1rem;
+      position: fixed;
+    }
+    .sidebar h5 {
+      color: #f8f9fa;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    width: 100px;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+    .sidebar a {
+      color: #adb5bd;
+      text-decoration: none;
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .sidebar a:hover { background-color: #495057; color: white; }
+    .content {
+      margin-left: 320px;
+      padding: 2rem;
+      width: 100%;
+    }
+    .section-header {
+      background-color: #343a40;
+      color: white;
+      padding: 0.75rem 1rem;
+      margin-top: 2rem;
+      border-radius: 0.5rem;
+    }
+    .card {
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+      background-color: #ffffff;
+    }
+    .department-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .dept-box {
+      background-color: #007bff;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: bold;
+      text-align: center;
+      min-width: 200px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .dept-box:hover {
+      background-color: #0056b3;
+      text-decoration: none;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMMS Maintenance Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f4f6f9; display: flex; }
+    .sidebar {
+      width: 250px;
+      background-color: #343a40;
+      color: white;
+      height: 100vh;
+      padding: 1rem;
+      position: fixed;
+    }
+    .sidebar h5 { color: #f8f9fa; margin-bottom: 1rem; }
+    .sidebar a {
+      color: #adb5bd;
+      text-decoration: none;
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+    }
+    .sidebar a:hover { background-color: #495057; color: white; }
+    .content {
+      margin-left: 320px;
+      padding: 2rem;
+      width: 100%;
+    }
+    .section-header { background-color: #343a40; color: white; padding: 0.75rem 1rem; margin-top: 2rem; border-radius: 0.5rem; }
+    .card { border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1rem; }
+    .department-boxes { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 2rem 0; }
+    .dept-box { background-color: #007bff; color: white; padding: 1rem 1.5rem; border-radius: 0.75rem; font-weight: bold; text-align: center; min-width: 200px; text-decoration: none; transition: 0.3s; }
+    .dept-box:hover { background-color: #0056b3; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="file:///C:/Users/Siti Zarini/Downloads/logo.png" alt="Logo">
+    <h5>Contents</h5>
+    <a href="#intro">1.0 Introduction & Project Background</a>
+    <a href="#orgchart">2.0 Maintenance Org Chart</a>
+    <a href="#departments">3.0 Main Departments</a>
+    <a href="#trackworks">4.0 Trackworks</a>
+    <a href="#system">5.0 System – Signalling</a>
+    <a href="#comms">6.0 System – Communication</a>
+    <a href="#OCS">7.0 System - Electrification (OCS)</a>
+    <a href="#tps">8.0 System - Electrification (TPS)</a>
+    <a href="#infra">9.0 Infra- Structures</a>
+  </div>
+
+  <div class="content">
+    <h2 class="mb-4">EDTP Gemas to Johor Bahru (DLP & Maintenance Dashboard)</h2>
+
+    <!-- 1.0 Introduction & Background -->
+    <div class="section-header" id="intro">1.0 INTRODUCTION & PROJECT BACKGROUND</div>
+    <div class="card p-3">
+      <p>This dashboard provides a digital overview of the maintenance activities and responsibilities across all key departments involved in the Electrified Double Track Project (EDTP) from Gemas to Johor Bahru.</p>
+      <p>The objective is to ensure all stakeholders are aligned on:</p>
+      <ul>
+        <li>Scope of work by department</li>
+        <li>Roles and responsibilities</li>
+        <li>Line of communication and coordination</li>
+        <li>Fault reporting, rectification and verification process</li>
+      </ul>
+      <p>Below is the route map of the EDTP Gemas–Johor Bahru alignment:</p>
+      <div style="text-align: center;">
+        <img src="file:///C:/Users/Siti Zarini/Downloads/edtp%20JB-new.png" alt="EDTP Route Map" style="width:60%; border-radius:10px;">
+      </div>
+    </div>
+
+    <!-- 2.0 Maintenance Organization Chart -->
+    <div class="section-header" id="orgchart">2.0 MAINTENANCE ORGANIZATION CHART</div>
+    <div class="card p-3">
+      <img src="file:///C:/Users/Siti Zarini/Downloads/org%20chart.png" alt="Maintenance Org Chart" style="max-width:100%; border-radius:10px;">
+    </div>
+
+    <!-- MAIN DEPARTMENT SECTION -->
+    <div class="section-header" id="departments">3.0 MAIN DEPARTMENTS DURING DLP AND MAINTENANCE</div>
+    <div class="department-boxes">
+      <a href="#trackworks" class="dept-box">Trackwork</a>
+      <a href="#system" class="dept-box">System (Signalling, Comms, TPS, OLE)</a>
+      <a href="#infra" class="dept-box">Infra-Structure (Civil, M&E, Architecture)</a>
+    </div>
+
+  <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMMS Maintenance Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body { background-color: #f4f6f9; display: flex; }
+    .sidebar {
+      width: 300px;
+      background-color: #343a40;
+      color: white;
+      height: 100vh;
+      padding: 1rem;
+      position: fixed;
+    }
+    .sidebar h5 {
+      color: #f8f9fa;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .sidebar a {
+      color: #adb5bd;
+      text-decoration: none;
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .sidebar a:hover { background-color: #495057; color: white; }
+    .content {
+      margin-left: 320px;
+      padding: 2rem;
+      width: 100%;
+    }
+    .section-header {
+      background-color: #343a40;
+      color: white;
+      padding: 0.75rem 1rem;
+      margin-top: 2rem;
+      border-radius: 0.5rem;
+      scroll-margin-top: 100px;
+    }
+    .card {
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+      background-color: #ffffff;
+    }
+    .department-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .dept-box {
+      background-color: #007bff;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: bold;
+      text-align: center;
+      min-width: 200px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .dept-box:hover {
+      background-color: #0056b3;
+      text-decoration: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      table-layout: fixed;
+      border: 2px solid blue;
+    }
+    th, td {
+      border: 2px solid blue;
+      padding: 8px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+    th {
+      background-color: #e9ecef;
+    }
+  </style>
+</head>
+<body>
+  <!-- existing code omitted for brevity -->
+
+    <!-- 4.0 Trackworks Section -->
+    <div class="section-header" id="trackworks">4.1 TRACKWORKS</div>
+    <div class="card p-3">
+      <h5><strong>4.1</strong> Maintenance Standard Operation</h5>
+      <p><strong>4.1.1</strong> Inspections/Track attentions will be carried out as per stated in KTMB PWM 2015 (Rev. 2/2024), Chapter 50 – Table 50.2 and the observations recorded in the checklists.</p>
+     <p><strong>4.1.2</strong> The monthly report shall consist of: </p>
+      <ul>
+        <li>Routine Maintenance (as per KTMB PWM 2015, Chapter 50 – Table 50.2)</li>
+        <li>Service Maintenance (complaints/reports from operators/authorities)</li>
+        <li>Observations (Defects) and Rectification (site inspection record)</li>
+      </ul>
+
+      <h5><strong>4.2</strong> Routine Maintenance Inspection</h5>
+
+<html lang="en">
+<head><meta charset="UTF-2"><title>CMMS Maintenance Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container py-2">
+     <a href=""C:\Users\Siti Zarini\Downloads\cmms_dashboard_with_checklist\checklist.html"class="btn btn-primary">📋 Trackwork Routine Checklist</a>
+  </div>
+</body>
+</html>
+
+
+       <h5 class="mt-5">4.2.1 Frequencies of inspection shall be carried out as below:</h5>
+
+      <strong>Table 4.1 : Mainline Maintenance Schedule</strong>
+      <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #000; padding: 8px;">Inspection Type/ Activity</th>
+            <th style="border: 1px solid #000; padding: 8px;">PWI</th>
+            <th style="border: 1px solid #000; padding: 8px;">CPWI</th>
+            <th style="border: 1px solid #000; padding: 8px;">Track Engineer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Foot Inspection (Concrete Sleepers)</td><td style="border: 1px solid #000; padding: 8px;">9–12 months</td><td style="border: 1px solid #000; padding: 8px;">-</td><td style="border: 1px solid #000; padding: 8px;">-</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Locomotive/ Cab/ Last Coach/ Trolley</td><td style="border: 1px solid #000; padding: 8px;">Once in 2 weeks</td><td style="border: 1px solid #000; padding: 8px;">Once a month</td><td style="border: 1px solid #000; padding: 8px;">Once in 3 months</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Accompanying TORC/ TCRC/ OMS runs (Every 3 months)</td><td style="border: 1px solid #000; padding: 8px;">Every run</td><td style="border: 1px solid #000; padding: 8px;">Every run</td><td style="border: 1px solid #000; padding: 8px;">Every run</td></tr>
+        </tbody>
+      </table>
+
+      <strong>Table 4.2 : Siding Maintenance Schedule</strong>
+      <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #000; padding: 8px;">Inspection Type/ Activity</th>
+            <th style="border: 1px solid #000; padding: 8px;">PWI</th>
+            <th style="border: 1px solid #000; padding: 8px;">CPWI</th>
+            <th style="border: 1px solid #000; padding: 8px;">Track Engineer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Foot Inspection</td><td style="border: 1px solid #000; padding: 8px;">Once in 4 months</td><td style="border: 1px solid #000; padding: 8px;">-</td><td style="border: 1px solid #000; padding: 8px;">-</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Trolley</td><td style="border: 1px solid #000; padding: 8px;">Once a month</td><td style="border: 1px solid #000; padding: 8px;">Once in 2 months</td><td style="border: 1px solid #000; padding: 8px;">As convenient</td></tr>
+        </tbody>
+      </table>
+
+      <strong>Table 4.3 : Points and Crossing Maintenance Schedule</strong>
+      <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #000; padding: 8px;">Inspection Type/ Activity</th>
+            <th style="border: 1px solid #000; padding: 8px;">PWI</th>
+            <th style="border: 1px solid #000; padding: 8px;">CPWI</th>
+            <th style="border: 1px solid #000; padding: 8px;">Track Engineer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Detail Inspection (Passenger Running Lines)</td><td style="border: 1px solid #000; padding: 8px;">Once in 6 months</td><td style="border: 1px solid #000; padding: 8px;">All major defective</td><td style="border: 1px solid #000; padding: 8px;">As when required</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Visual Inspection (Passenger Running Lines)</td><td style="border: 1px solid #000; padding: 8px;">Once a month on run through turnouts</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td><td style="border: 1px solid #000; padding: 8px;">As when required</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Detail Inspection (Other Turnouts)</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td><td style="border: 1px solid #000; padding: 8px;">As when required</td><td style="border: 1px solid #000; padding: 8px;">As when required</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Visual Inspection (Other Turnouts)</td><td style="border: 1px solid #000; padding: 8px;">Once in 2 months</td><td style="border: 1px solid #000; padding: 8px;">As when required</td><td style="border: 1px solid #000; padding: 8px;">As when required</td></tr>
+        </tbody>
+      </table>
+
+      <strong>Table 4.4 : Other Track Fixtures Maintenance Schedule</strong>
+      <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #000; padding: 8px;">Inspection Type/ Activity</th>
+            <th style="border: 1px solid #000; padding: 8px;">PWI</th>
+            <th style="border: 1px solid #000; padding: 8px;">CPWI</th>
+            <th style="border: 1px solid #000; padding: 8px;">Track Engineer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Inspection of level crossings</td><td style="border: 1px solid #000; padding: 8px;">Once in 3 months</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td><td style="border: 1px solid #000; padding: 8px;">One level crossing in every track inspection</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Creep marker measurement</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td><td style="border: 1px solid #000; padding: 8px;">-</td><td style="border: 1px solid #000; padding: 8px;">-</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Buffer Stop Inspection (Wear and Tear)</td><td style="border: 1px solid #000; padding: 8px;">Once in 6 months</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Inspection of bridges</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Wayside inspections, formation embankment and cuttings, areas prone to settlements etc</td><td style="border: 1px solid #000; padding: 8px;">Once in 3 months</td><td style="border: 1px solid #000; padding: 8px;">Once a year</td><td style="border: 1px solid #000; padding: 8px;">As when required</td></tr>
+        </tbody>
+      </table>
+
+      <p><h5><strong>4.3</strong> Observations (Defects) and Rectification</h5></p>
+<p>4.3.1 Observations & Defects</p>
+<p>4.3.1.1 The Track Rectification Teams have received observations and defect notifications from either the Inspection Teams or KTMB, as summarized in Appendix 1A (Routine Inspection) and APPENDIX 1B (Services Inspection).</p>
+  
+      <h5>CRJGR Trackwork – Maintenance Checklist</h5>
+      <table style="width:100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #000; padding: 8px;">Checklist Item</th>
+            <th style="border: 1px solid #000; padding: 8px;">Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Foot Inspection Checklist</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0001</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Locomotive/Cab/Last Coach/Trolley</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0002</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">1 in 15 Turnout Inspection</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0003</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">1 in 9 Turnout Inspection</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0004</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Trap Switch Inspection</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0005</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Level Crossing</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0007</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Track Geometry</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0008</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">GIRJ</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0009</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Creep Marker</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0010</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Buffer Stop</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0011</strong></td></tr>
+          <tr><td style="border: 1px solid #000; padding: 8px;">Civil Work Foot Inspection</td><td style="border: 1px solid #000; padding: 8px;"><strong>CRJGR-TWM-0012</strong></td></tr>
+        </tbody>
+      </table>
+
+    <!-- 5.0 Signalling -->
+    <div class="section-header" id="system">5.0 SYSTEM – SIGNALLING WORKS</div>
+    <div class="card p-3">
+      <ul>
+       <h5><strong>5.1</strong> Maintenance Standard Operation</h5>
+<p><strong>5.1.1</strong> The monthly report shall consist of:</p>
+<ul>
+  <li><strong>Routine Maintenance</strong> – Routine Maintenance refers to works that must be carried out by the Contractor according to the Operation and Maintenance Manuals in Appendix 2A.</li>
+  <li><strong>Service Maintenance</strong> – Service Maintenance refers to complaints and reports made by operators, authorities, or other relevant parties. If there are defects that were not detected during Routine Maintenance, it shall be attended to and rectified by the Contractor.</li>
+  <li><strong>Observations (Defects) and Rectification</strong> – All observations made by all parties are reported to the Contractor via Project Operational Control Centre (POCC).</li>
+</ul>
+
+
+<h5><strong>5.2</strong> Routine Maintenance Inspection</h5>
+<p><strong>5.2.1</strong> Frequencies of inspection shall be carried out as below:</p>
+
+<strong>Table 5.1 : Routine Maintenance Schedule</strong>
+<table style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 8px;">Equipment</th>
+      <th style="border: 1px solid black; padding: 8px;">Activity</th>
+      <th style="border: 1px solid black; padding: 8px;">Gemas Station</th>
+      <th style="border: 1px solid black; padding: 8px;">Gemas Depot</th>
+      <th style="border: 1px solid black; padding: 8px;">Genuang Station</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="border: 1px solid black; padding: 8px;">Microlok II System</td><td style="border: 1px solid black; padding: 8px;">Routine inspection and board maintenance</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Signals</td><td style="border: 1px solid black; padding: 8px;">LED and alignment checks, cleaning</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">General Signalling Equipment</td><td style="border: 1px solid black; padding: 8px;">Check and replace faulty terminals</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Power Supply</td><td style="border: 1px solid black; padding: 8px;">Inspection of power units and transformers</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Earth Leakage Detector</td><td style="border: 1px solid black; padding: 8px;">Check and test for leakage issues</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Surge Protection Devices</td><td style="border: 1px solid black; padding: 8px;">Inspect and replace damaged units</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Outdoor Signalling Cables</td><td style="border: 1px solid black; padding: 8px;">Cable insulation and connectivity check</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Local Control Panels</td><td style="border: 1px solid black; padding: 8px;">Software update and connectivity test</td><td style="border: 1px solid black; padding: 8px;">Regular Cleaning</td><td style="border: 1px solid black; padding: 8px;">Regular Cleaning</td><td style="border: 1px solid black; padding: 8px;">Regular Cleaning</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Axle Counters</td><td style="border: 1px solid black; padding: 8px;">Calibration and error-checking</td><td style="border: 1px solid black; padding: 8px;">Every 2 Years</td><td style="border: 1px solid black; padding: 8px;">N/A</td><td style="border: 1px solid black; padding: 8px;">Every 2 Years</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">AC Immune DC Track Circuits</td><td style="border: 1px solid black; padding: 8px;">Inspection and troubleshooting</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Point Machines</td><td style="border: 1px solid black; padding: 8px;">Lubrication and mechanical alignment</td><td style="border: 1px solid black; padding: 8px;">Every 6 Months</td><td style="border: 1px solid black; padding: 8px;">Every 6 Months</td><td style="border: 1px solid black; padding: 8px;">Every 6 Months</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Vital Signalling Relays</td><td style="border: 1px solid black; padding: 8px;">Visual inspection and relay function test</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Signalling Comms Equipment</td><td style="border: 1px solid black; padding: 8px;">Network performance check</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">Wayside ATP Equipment</td><td style="border: 1px solid black; padding: 8px;">Transponder inspection and calibration</td><td style="border: 1px solid black; padding: 8px;">Yearly</td><td style="border: 1px solid black; padding: 8px;">N/A</td><td style="border: 1px solid black; padding: 8px;">Yearly</td></tr>
+    <tr><td style="border: 1px solid black; padding: 8px;">CTC Equipment</td><td style="border: 1px solid black; padding: 8px;">System diagnostics and maintenance</td><td style="border: 1px solid black; padding: 8px;">Every 3 Months</td><td style="border: 1px solid black; padding: 8px;">N/A</td><td style="border: 1px solid black; padding: 8px;">Every 3 Months</td></tr>
+  </tbody>
+</table>
+
+
+  <h5 class="mt-5">5.3 Observations (Defects)and Rectification</h5>
+  <p><strong>5.3.1 Observations & Defects</strong></p>
+  <p>5.3.1.1 The Emergency Response Team (ERT) have received observations and defect notifications from Project Operational Control Centre (POCC).</p>
+</div>
+
+    <!-- 6.0 Communication -->
+    <div class="section-header" id="comms">6.0 SYSTEM – COMMUNICATION SYSTEMS</div>
+    <div class="card p-3">
+   
+<h5><strong>6.1</strong> Maintenance Standard Operation</h5>
+<p></strong>6.1.1 The inspection of maintenance activities for the respective communication sub-systems has been approved and will be carried out in accordance with the following documents:></p>
+
+  <strong>Table 6.1: Approved Communication Maintenance Manual List</strong>
+  <table style="width:100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid #000; padding: 8px;">Sub-systems Maintenance Manual</th>
+        <th style="border: 1px solid #000; padding: 8px;">Approved Maintenance Manual Ref. No.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Card Access System (CAS)</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-CAS-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for IT System (IT)</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-CIT-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Closed Circuit Television System (CCTV)</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-CTV-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Digital Transmission System (DTS)</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-DTS-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Master Clock System (MCS)</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-MCS-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Public Address System (PAS)</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-PAS-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Electronic Private Automatic Exchange (PABX) System</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-PBX-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Passenger Information System (PIS)</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-PIS-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Station Automation System (BSCADA)</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-SCA-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Switch Mode Rectifier (SMR) System</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-REC-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Uninterruptible Power Supply (UPS) System</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-WMSB-MAN-SYS-S0.0-COM-UPS-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Tetra Radio System</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-MSMS-MAN-SYS-S0.0-COM-TET-00002</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Tetra Cabin</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-MSMS-MAN-SYS-S0.0-COM-TET-00015</td></tr>
+      <tr><td style="border: 1px solid #000; padding: 8px;">Maintenance Manual for Tetra Tower</td><td style="border: 1px solid #000; padding: 8px;">CRJGR-MSMS-MAN-SYS-S0.0-COM-TET-00014</td></tr>
+    </tbody>
+  </table>
+
+  <p class="mt-4"><strong>6.1.2 The monthly report shall consist of:</strong></p>
+  <ul>
+    <li><strong>Preventive Maintenance Log</strong><br>
+    Preventive maintenance includes both condition-monitoring and life-extending tasks which are scheduled at regular intervals. Some tasks must be performed with energized equipment while other shall be performed by shutting down the equipment. Preventive Maintenance shall be performed within periodic time intervals (based on operating or calendar time) or based on measurement result which shows a degradation of the system /equipment performance (Condition Based Maintenance) as per the approved Maintenance Manual stated above in item 6.1.1 for respective sub-systems. The maintenance works which required to shut down the equipment or will disrupt the operation is advisable to perform the maintenance works during Engineering Hours.</li>
+    <li><strong>Corrective Maintenance Log</strong><br>
+    Corrective maintenance shall always have highest priority and requires urgent action to carry out repair works or component replacement, to restore the system to a service ready state. Corrective Maintenance will consist of repair, restoration, or replacement of equipment, which will be performed on-site and off-site (to restore failed unit/equipment into working unit/equipment).</li>
+    <li><strong>Observations (Defects) and Rectification</strong><br>
+    All observations made by all parties are reported to the Contractor via Project Operational Control Centre (POCC) for necessary corrective maintenance actions.</li>
+  </ul>
+
+
+
+<h5 class="mt-5">6.2 PREVENTIVE MAINTENANCE INSPECTION</h5>
+  <p>6.2.1 The Preventive Maintenance frequencies shall be performed as outlined below. Due to the extensive content, this section is available in <strong>Appendix 3A</strong> for full details.</p>
+  <table style="width:100%; border-collapse: collapse; border: 2px solid red;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid red; padding: 8px;">Sub-System</th>
+        <th style="border: 1px solid red; padding: 8px;">Equipment</th>
+        <th style="border: 1px solid red; padding: 8px;">Maintenance Activity</th>
+        <th style="border: 1px solid red; padding: 8px;">Frequency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid red; padding: 8px;">UPS</td>
+        <td style="border: 1px solid red; padding: 8px;">UPS Power Module & Battery</td>
+        <td style="border: 1px solid red; padding: 8px;">Visual Inspection and housekeeping</td>
+        <td style="border: 1px solid red; padding: 8px;">Quarterly</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid red; padding: 8px;">UPS</td>
+        <td style="border: 1px solid red; padding: 8px;">UPS Room Condition and Temperature</td>
+        <td style="border: 1px solid red; padding: 8px;">Visual and Environmental Check</td>
+        <td style="border: 1px solid red; padding: 8px;">Quarterly</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid red; padding: 8px;">UPS</td>
+        <td style="border: 1px solid red; padding: 8px;">UPS Rack</td>
+        <td style="border: 1px solid red; padding: 8px;">Check fans for rotation, vibration and airflow</td>
+        <td style="border: 1px solid red; padding: 8px;">Quarterly</td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+
+
+
+        <li><strong>6.3</strong> Observations (Defects) and Rectification</li>
+      </ul>
+    </div>
+
+    <!-- 7.0 OLE -->
+    <div class="section-header" id="ole">7.0 SYSTEM – ELECTRIFICATION (Overhead Catenary System)</div>
+    <div class="card p-3">
+         <h5><strong>7.1 Maintenance Standard Operation</h5>
+
+  <p></strong>7.1.1</strong> The inspection of maintenance activities for the Overhead Catenary System has been approved and will be carried out in accordance to the document in the table below.></p>
+
+ <strong>Table 7.1: Approved Overhead Catenary System Maintenance Manual List</strong>
+ <table style="width:100%; border-collapse: collapse; border: 2px solid red;">
+         <th style="border: 1px solid red; padding: 8px;">Sub-systems Maintenance Manual</th>
+        <th style="border: 1px solid red; padding: 8px;">Approved Maintenance Manual Ref. No.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid red; padding: 8px;">Operation and Maintenance Manual (OHLE) – Part I System Description</td><td style="border: 1px solid red; padding: 8px;">CRJGR-SIPY-OMM-SYS-S0.0-OCS-OHL-00001</td></tr>
+      <p><tr><td style="border: 1px solid red; padding: 8px;">Operation and Maintenance Manual (OHLE) – Part II Installation, Operation and Maintenance Requirements</td><td style="border: 1px solid red; padding: 8px;">CRJGR-SIPY-OMM-SYS-S0.0-OCS-OHL-00002</td></tr></p>
+    </tbody>
+  </table>
+
+  <p><strong>7.1.2</strong> The monthly report shall consist of:</p>
+    <li><strong>Routine Maintenance:</strong> Routine Maintenance refers to works that must be carried out by the Contractor according the Operation and Maintenance Manuals. Refer Appendix 4A.</li>
+    <li><strong>Service Maintenance:</strong> Service Maintenance refers to complaints and reports made by operators, authorities, or other relevant parties. If there are defects that were not detected during Routine Maintenance, it shall be attended to and rectified by the Contractor.</li>
+    <li><strong>Observations (Defects) and Rectification:</strong> All observations made by all parties are reported to the Contractor via Project Operational Control Centre (POCC).</li>
+
+<p><h5><strong>7.2 Routine Maintenance Inspection</h5></p>
+  <p>7.2.1 Frequencies of inspection shall be carried out as below:</p>
+  <p><strong>Table 7.2 : Routine Maintenance Schedule</strong></p>
+  <table style="width:100%; border-collapse: collapse; border: 2px solid red;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid red; padding: 8px;">No</th>
+        <th style="border: 1px solid red; padding: 8px;">Element</th>
+        <th style="border: 1px solid red; padding: 8px;">Frequency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid red; padding: 8px;">1</td><td style="border: 1px solid red; padding: 8px;">Overall OCS installation – Foot patrol</td><td style="border: 1px solid red; padding: 8px;">Monthly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">2</td><td style="border: 1px solid red; padding: 8px;">Overall OCS installation – Inspection Car</td><td style="border: 1px solid red; padding: 8px;">Bi-weekly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">3</td><td style="border: 1px solid red; padding: 8px;">Mast – Tilted Mast (out of Plumb masts)</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">4</td><td style="border: 1px solid red; padding: 8px;">Mast REFOS - Rail Level and Masts REFOS</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">5</td><td style="border: 1px solid red; padding: 8px;">Contact Wire – Contact Wire Hard Spots and Wear</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">6</td><td style="border: 1px solid red; padding: 8px;">OCS at overlaps, section insulators, turnouts and neutral sections – Sparking During Current Collection</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">7</td><td style="border: 1px solid red; padding: 8px;">Contact Wire – Contact Wire Wear</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">8</td><td style="border: 1px solid red; padding: 8px;">Splice Fittings – Splice for single contact wire, messenger wire, REW, EW, Feeder Wire</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">9</td><td style="border: 1px solid red; padding: 8px;">Light Weight Section Insulator Assembly</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">10</td><td style="border: 1px solid red; padding: 8px;">Neutral Section</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">11</td><td style="border: 1px solid red; padding: 8px;">Jumper Connections</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">12</td><td style="border: 1px solid red; padding: 8px;">Auto Tensioning Devices</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">13</td><td style="border: 1px solid red; padding: 8px;">Insulators (Heavy polluted or industrial area)</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">14</td><td style="border: 1px solid red; padding: 8px;">Bond Connection</td><td style="border: 1px solid red; padding: 8px;">Yearly</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">15</td><td style="border: 1px solid red; padding: 8px;">Insulators (Non-Polluted Zone)</td><td style="border: 1px solid red; padding: 8px;">3 years</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">16</td><td style="border: 1px solid red; padding: 8px;">OHLE Steel Structures and fittings</td><td style="border: 1px solid red; padding: 8px;">3 years</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">17</td><td style="border: 1px solid red; padding: 8px;">Masts – structural condition</td><td style="border: 1px solid red; padding: 8px;">3 years</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">18</td><td style="border: 1px solid red; padding: 8px;">Wires – Jointed area</td><td style="border: 1px solid red; padding: 8px;">3 years</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">19</td><td style="border: 1px solid red; padding: 8px;">Clearances under overline structures and stations</td><td style="border: 1px solid red; padding: 8px;">3 years</td></tr>
+    </tbody>
+  </table>
+
+  <h5 class="mt-5">7.3 Observations (Defects) and Rectification</h5>
+  <p><strong>7.3.1 Observations & Defects</strong></p>
+  <p></strong>7.3.1.1 In the event of any observations, defects, system errors, or other related issues, the Maintenance Team will be notified by the Project Operational Control Centre (POCC) for necessary corrective maintenance actions.</p>
+  <p>7.3.1.2 All corrective maintenance activities carried out during this month, if any, are listed in Appendix 4B.</p>
+</div>
+
+    <!-- 8.0 TPS -->
+    <div class="section-header" id="tps">8.0 System - Electrification (Traction Power Supply)</div>
+    <div class="card p-3">
+    <h5><strong>8.1 Maintenance Standard Operation</h5>
+
+ <p></strong>8.1.1</strong> The inspection of maintenance activities for the respective Traction Power Supply has been approved and will be carried out in accordance to <strong>GJBEDTP-CRJGR-SIPY-OMM-SYS-S0.0-TPS-ALL-00001</strong></p>
+
+  <p></strong>8.1.2</strong> The monthly report shall consist of:</p>
+  <ul>
+    <li><strong>Routine Maintenance</strong><br>Routine Maintenance refers to works that must be carried out by the Contractor according the Operation and Maintenance Manuals in Appendix 5A.</li>
+    <li><strong>Service Maintenance</strong><br>Service Maintenance refers to complaints and reports made by operators, authorities, or other relevant parties. If there are defects that were not detected during Routine Maintenance, it shall be attended to and rectified by the Contractor.</li>
+    <li><strong>Observations (Defects) and Rectification</strong><br>All observations made by all parties are reported to the Contractor via Project Operational Control Centre (POCC).</li>
+  
+<h5 class="mt-5">8.2 ROUTINE MAINTENANCE INSPECTION</h5>
+  <p><strong>8.2.1</strong> Frequencies of inspection shall be carried out as below:</p>
+  <p><strong>Table 8.1: Routine Maintenance Schedule</strong></p>
+  <table style="width:100%; border-collapse: collapse; border: 2px solid red;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid red; padding: 8px;">No</th>
+        <th style="border: 1px solid red; padding: 8px;">Equipment</th>
+        <th style="border: 1px solid red; padding: 8px;">FS</th>
+        <th style="border: 1px solid red; padding: 8px;">MPTSL</th>
+        <th style="border: 1px solid red; padding: 8px;">TCBL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="border: 1px solid red; padding: 8px;">1</td><td style="border: 1px solid red; padding: 8px;">132kV Equipment:<br>• Circuit Breaker<br>• Disconnector with Earth Switch<br>• Surge Arrestor<br>• Current Transformer<br>• Capacitive Voltage Transformer</td><td style="border: 1px solid red; padding: 8px;">Monthly<br>Yearly</td><td style="border: 1px solid red; padding: 8px;">N/A</td><td style="border: 1px solid red; padding: 8px;">N/A</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">2</td><td style="border: 1px solid red; padding: 8px;">132/25 kV Power Transformer</td><td style="border: 1px solid red; padding: 8px;">Monthly<br>6 months<br>Yearly</td><td style="border: 1px solid red; padding: 8px;">N/A</td><td style="border: 1px solid red; padding: 8px;">N/A</td></tr>
+      <tr><td style="border: 1px solid red; padding: 8px;">3</td><td style="border: 1px solid red; padding: 8px;">Protection Relays at CRP</td><td style="border: 1px solid red; padding: 8px;">Monthly<br>2 years</td><td style="border: 1px solid red; padding: 8px;">N/A</td><td style="border: 1px solid red; padding: 8px;">N/A</td></tr>
+    </tbody>
+  </table>
+
+  <h5 class="mt-5">8.3 OBSERVATIONS (DEFECTS) AND RECTIFICATION</h5>
+  <p></strong>8.3.1</strong> Observations &amp; Defects</p>
+  <ul>
+    <li></strong>8.3.1.1</strong> In the event of any observations, defects, system errors, or other related issues, the Maintenance Team will be notified by the Project Operational Control Centre (POCC) for necessary corrective maintenance actions.</li>
+    <li></strong>8.3.1.2</strong> All corrective maintenance activities carried out during this month, if any, are listed in Appendix 5B.</li>
+  </ul>
+</div>
+
+    <!-- 9.0 Infra Section -->
+  <div class="section-header" id="tps">9.0 Infra-Structures</div>
+    <div class="card p-3">
+
+  <h5 class="mt-5">9.1 CIVIL WORKS INSPECTION</h5>
+  <p><strong>9.1.1</strong> Technical Officer will inspect the general condition of the infrastructure; in case of any changes, deteriorated or unsafe condition during inspection duties.</p>
+  <p><strong>9.1.2</strong> The inspection is carried out on a monthly basis (Appendix 6A); observations are recorded in separate inspection sheets for further actioning.</p>
+  <p><strong>9.1.3</strong> Frequencies of inspection shall be carried out as below:</p>
+
+  <p><strong>Table 9.1: Civil Works Inspection Schedule</strong></p>
+  <img src="/mnt/data/Civil Works Inspection.png" alt="Civil Works Inspection Table" style="width:100%; border: 1px solid #ccc;">
+</div>
+
+  <p></strong>9.1.2</strong> The inspection is carried out on a monthly basis (Appendix 6A); observations are recorded in separate inspection sheets for further actioning.</p>
+  <p></strong>9.1.3</strong> Frequencies of inspection shall be carried out as below:</p>
+
+  <p><strong>Table 9.1: Civil Works Inspection Schedule</strong></p>
+  
+
+
+
+
+
+</div>
+ </body>
+</html>
